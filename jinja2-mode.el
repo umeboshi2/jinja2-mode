@@ -127,8 +127,7 @@
                      (car open-tag)(nth 1 open-tag))
            (format "{%% end%s %%}"
                    (match-string 2))))
-      (error "Nothing to close")))
-  (save-excursion (jinja2-indent-line)))
+      (error "Nothing to close"))))
 
 (defun jinja2-insert-tag ()
   "Insert an empty tag"
@@ -143,16 +142,14 @@
   (interactive)
   (insert "{{ ")
   (save-excursion
-    (insert " }}")
-    (jinja2-indent-line)))
+    (insert " }}")))
 
 (defun jinja2-insert-comment ()
   "Insert an empty tag"
   (interactive)
   (insert "{# ")
   (save-excursion
-    (insert " #}")
-    (jinja2-indent-line)))
+    (insert " #}")))
 
 (defconst jinja2-font-lock-comments
   `(
@@ -312,8 +309,7 @@
           jinja2-font-lock-keywords-3)
          nil t nil nil
          (font-lock-syntactic-keywords
-          . sgml-font-lock-syntactic-keywords)))
-  (set (make-local-variable 'indent-line-function) 'jinja2-indent-line))
+          . sgml-font-lock-syntactic-keywords))))
 
 (define-key jinja2-mode-map (kbd "C-c c") 'jinja2-close-tag)
 (define-key jinja2-mode-map (kbd "C-c t") 'jinja2-insert-tag)
