@@ -1,9 +1,11 @@
-;;; jinja2-mode.el --- A major mode for jinja2
+;;; nijinja2-mode.el --- A major mode for jinja2 (no indent)
 
 ;; Copyright (C) 2011 Florian Mounier aka paradoxxxzero
 
 ;; Author: Florian Mounier aka paradoxxxzero
 ;; Version: 0.2
+
+;; modified to prevent indentation
 
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -23,10 +25,10 @@
 ;;   This is an emacs major mode for jinja2 with:
 ;;        syntax highlighting
 ;;        sgml/html integration
-;;        indentation (working with sgml)
-;;        more to come
+;;        no indentation (working with sgml)
+;;        nothing more to come
 
-;; This file comes from http://github.com/paradoxxxzero/jinja2-mode
+;; This file comes from http://github.com/umeboshi2/nijinja2-mode
 
 ;;; Code:
 
@@ -317,8 +319,8 @@
 (define-key jinja2-mode-map (kbd "C-c #") 'jinja2-insert-comment)
 
 ;;;###autoload
-(add-to-list 'auto-mode-alist '("\\.jinja2\\'" . jinja2-mode))
+(add-to-list 'auto-mode-alist '("\\.jinja2\\'" . nijinja2-mode))
 
-(provide 'jinja2-mode)
+(provide 'nijinja2-mode)
 
 ;;; jinja2-mode.el ends here
